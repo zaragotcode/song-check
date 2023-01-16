@@ -15,6 +15,13 @@ function index(req, res) {
 })
 }
 
+function newSong(req, res) {
+  res.render("songs/new", {
+    title: "Add New Song"
+  })
+}
+
 export {
-  index
+  index,
+  newSong as new
 }
