@@ -5,6 +5,9 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  location: String,
+  favoriteArtist: String,
+  playlist: [{type: Schema.Types.ObjectId, ref: 'Song'}]
 }, {
   timestamps: true
 })
