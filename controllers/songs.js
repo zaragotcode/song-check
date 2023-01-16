@@ -45,11 +45,11 @@ function show(req, res) {
 function create(req,res){
   req.body.owner = req.user.profile
   req.body.explicitRating = !!req.body.explicitRating
-  for (const key in req.body) {
-    // Key can be "title", "releaseYear", etc.
-    if(req.body[key] === "") delete req.body[key]
-    //req.body.releaseYear is "" so we delete it
-  }
+  // for (const key in req.body) {
+  //   // Key can be "title", "releaseYear", etc.
+  //   if(req.body[key] === "") delete req.body[key]
+  //   //req.body.releaseYear is "" so we delete it
+  // }
   Song.create(req.body)
   .then(song => {
     res.redirect('/songs')
@@ -70,7 +70,42 @@ function edit(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/tacos')
+    res.redirect('/songs')
+  })
+}
+
+function update(req, res) {
+  Song.findById(req.params.id)
+  .then(song => {
+    req.body.explicitRating = !!req.body.explicitRating
+    song.updateOne(req.body)
+    .then(() => {
+      res.redirect(`/songs/${song._id}`)
+      console.log('update controller firing')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/songs')
+  })
+}
+
+function createReview(req, res) {
+  Song.findById(req.params.id)
+  .then(song => {
+    song.reviews.push(req.body)
+    song.save()
+    .then(() => {
+      res.redirect(`/songs/${song._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -79,5 +114,7 @@ export {
   newSong as new,
   show,
   create,
-  edit
+  edit,
+  update,
+  createReview
 }

@@ -19,6 +19,12 @@ router.get('/:id/edit', isLoggedIn, songsCtrl.edit)
 // POST localhost:3000/songs
 router.post("/", songsCtrl.create)
 
+// POST localhost:3000/movies
+router.post("/:id/reviews", songsCtrl.createReview)
+
+// PUT localhost:3000/songs/:id
+router.put('/:id', isLoggedIn, songsCtrl.update)
+
 export {
   router
 }

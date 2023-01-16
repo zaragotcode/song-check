@@ -4,8 +4,11 @@
 
 <main>
   <% if (song.owner.equals(user?.profile._id)) { %>
-  <h1><%= title %></h1>
-  <form id="new-form" action="/songs" method="POST">
+    <h1><%= title %></h1>
+    <form 
+      id="new-form"
+      action="/songs/<%= song._id %>?_method=PUT" 
+      method="POST">
       <label for="title-input">Title: </label>
       <input 
         required 
@@ -15,9 +18,14 @@
         value="<%= song.title %>"
       >
       <label for="artist-input">Artist: </label>
-      <input type="text" name="artist" id="artist-input">
+      <input 
+        type="text" 
+        name="artist" 
+        id="artist-input"
+        value="<%= song.artist %>"
+        >
       <label for="genre-select">Genre: </label>
-      <select name="genre" id="genre-select">
+      <select name="genre" id="genre-select" value="<%= song.genre %>">
         <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
         <option value="R&B">R&B</option>
         <option value="Rock">Rock</option>
@@ -29,11 +37,15 @@
         <option value="Indie">Indie</option>
         <option value="Reggaeton">Reggaeton</option>
         <option value="Electronic">Electronic</option>
-    </select>
-    <label for="explicit-rating-checkbox">Explicit Rating: </label>
-    <input type="checkbox" name="explicitRating" id="explicit-rating-checkbox" checked>
-    <button type="submit">Add Song</button>
-  </form>
+      </select>
+      <label for="explicit-rating-checkbox">Explicit Rating: </label>
+      <input 
+        type="checkbox" 
+        name="explicitRating" 
+        id="explicit-rating-checkbox" 
+        <%= song.explicitRating ? "checked" : "" %>>
+      <button type="submit">Finish Edit</button>
+    </form>
   <% } %>
 </main>
 

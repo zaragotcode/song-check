@@ -5,9 +5,8 @@
 <main>
   <h1><%= title %></h1>
   <section>
-    <div>Title: </div>
-    <div>Artist: </div>
-    <div><%= song.artist %></div>
+    <div>Title: <%= song.title %></div>
+    <div>Artist: <%= song.artist %> </div>
     <div>Genre: </div>
     <div><%= song.genre %></div>
     <div>Explicit Rating: </div>
@@ -48,6 +47,7 @@
           <th>Date</th>
           <th>Review</th>
           <th>Rating</th>
+          <th>Reviewer</th>
         </tr>
       </thead>
       <tbody>
@@ -56,6 +56,7 @@
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.content %></td>
             <td><%= review.rating %></td>
+            <td><%= song.owner.name %></td>
           </tr>
         <% }) %>
       </tbody>
