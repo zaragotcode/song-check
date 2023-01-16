@@ -6,41 +6,28 @@
   <h1><%= title %></h1>
   <section>
     <div>Title: </div>
-    <div>
-      <%= movie.title %>
-      <a href='/movies/<%= movie._id %>/edit'>
-      <button>Edit Movie</button>
+    <div>Artist: </div>
+    <div><%= song.artist %></div>
+    <div>Genre: </div>
+    <div><%= song.genre %></div>
+    <div>Explicit Rating: </div>
+    <div><%= song.explicitRating ? 'Yes' : 'Nope' %></div>
+    <% if (song.owner.equals(user?.profile._id)) { %>
+      <a href='/songs/<%= song._id %>/edit'>
+        <button>Edit Song</button>
       </a>
-    </div>
-    <div>Release Year: </div>
-    <div><%= movie.releaseYear %></div>
-    <div>Rating: </div>
-    <div><%= movie.mpaaRating %></div>
-    <div>Now Showing: </div>
-    <div><%= movie.nowShowing ? 'Yes' : 'Nope' %></div>
-    <div>Cast:</div>
-      <ul>
-        <% movie.cast.forEach(castMember => { %>
-          <li><%= castMember.name %></li>
-        <% }) %>
-      </ul>
+    <% } %>
   </section>
 
-  <form action="/movies/<%= movie._id %>/performers" method="POST">
-    <select name="performerId">
-      <% performersNotInCast.forEach(performer => { %>
-        <option value="<%= performer._id %>"><%= performer.name %></option>
-      <% }) %>
-    </select>
-    <button type="submit">Add to Cast</button>
-  </form>
+
 
   <h2>Reviews</h2>
-  <form 
+  <% if (user) { %>
+    <form 
     id="add-review-form"
-    action="/movies/<%= movie._id %>/reviews"
+    action="/show/<%= show._id %>/reviews"
     method="POST"
-  >
+    >
     <label for="content-textarea">Review:</label>
     <textarea name="content" id="content-textarea"></textarea>
     <label for="rating-select">Rating:</label>
@@ -53,7 +40,8 @@
     </select>
     <button type="submit">Add Review</button>
   </form>
-  <% if (movie.reviews.length) { %>
+  <% } %>
+  <% if (songs.reviews.length) { %>
     <table>
       <thead>
         <tr>
