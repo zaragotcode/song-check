@@ -21,7 +21,47 @@ function newSong(req, res) {
   })
 }
 
+function show(req, res) {
+  Song.findById(req.params.id)
+  .populate('owner')
+  .then(song => {
+    res.render('songs/show', {
+      song,
+      title: 'Song Details'
+    })
+  })
+  .catch(error => {
+    // handle errors
+    console.log(error)
+    res.redirect('/')
+  })
+  .catch(error => {
+    // handle errors
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function create(req,res){
+  req.body.explicitRating = !!req.body.explicitRating
+  for (const key in req.body) {
+    // Key can be "title", "releaseYear", etc.
+    if(req.body[key] === "") delete req.body[key]
+    //req.body.releaseYear is "" so we delete it
+  }
+  Song.create(req.body)
+  .then(song => {
+    res.redirect('/songs')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/songs')
+  })
+}
+
 export {
   index,
-  newSong as new
+  newSong as new,
+  show,
+  create
 }

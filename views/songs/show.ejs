@@ -1,0 +1,80 @@
+<%- include('../partials/html-head') %>
+<!-- <link rel="stylesheet" href="/stylesheets/shows/new.css"> -->
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Title: </div>
+    <div>
+      <%= movie.title %>
+      <a href='/movies/<%= movie._id %>/edit'>
+      <button>Edit Movie</button>
+      </a>
+    </div>
+    <div>Release Year: </div>
+    <div><%= movie.releaseYear %></div>
+    <div>Rating: </div>
+    <div><%= movie.mpaaRating %></div>
+    <div>Now Showing: </div>
+    <div><%= movie.nowShowing ? 'Yes' : 'Nope' %></div>
+    <div>Cast:</div>
+      <ul>
+        <% movie.cast.forEach(castMember => { %>
+          <li><%= castMember.name %></li>
+        <% }) %>
+      </ul>
+  </section>
+
+  <form action="/movies/<%= movie._id %>/performers" method="POST">
+    <select name="performerId">
+      <% performersNotInCast.forEach(performer => { %>
+        <option value="<%= performer._id %>"><%= performer.name %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Add to Cast</button>
+  </form>
+
+  <h2>Reviews</h2>
+  <form 
+    id="add-review-form"
+    action="/movies/<%= movie._id %>/reviews"
+    method="POST"
+  >
+    <label for="content-textarea">Review:</label>
+    <textarea name="content" id="content-textarea"></textarea>
+    <label for="rating-select">Rating:</label>
+    <select name="rating" id="rating-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <button type="submit">Add Review</button>
+  </form>
+  <% if (movie.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% movie.reviews.forEach(function(review) { %>
+          <tr>
+            <td><%= review.createdAt.toLocaleDateString() %></td>
+            <td><%= review.content %></td>
+            <td><%= review.rating %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Reviews Yet</h3>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %> 
