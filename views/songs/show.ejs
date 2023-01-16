@@ -4,6 +4,9 @@
 
 <main>
   <h1><%= title %></h1>
+  <% if (!song.owner.equals(user?.profile._id)) { %>
+    <h2>This song was added by <%= song.owner.name %> </h2>
+  <% } %>
   <section>
     <div>Title: <%= song.title %></div>
     <div>Artist: <%= song.artist %> </div>
