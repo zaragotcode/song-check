@@ -43,6 +43,7 @@ function show(req, res) {
 }
 
 function create(req,res){
+  req.body.owner = req.user.profile
   req.body.explicitRating = !!req.body.explicitRating
   for (const key in req.body) {
     // Key can be "title", "releaseYear", etc.
@@ -59,9 +60,24 @@ function create(req,res){
   })
 }
 
+function edit(req, res) {
+  Song.findById(req.params.id)
+  .then(song => {
+    res.render('songs/edit', {
+      song,
+      title: "Edit 🎵"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tacos')
+  })
+}
+
 export {
   index,
   newSong as new,
   show,
-  create
+  create,
+  edit
 }

@@ -1,0 +1,40 @@
+<%- include('../partials/html-head') %>
+<!-- <link rel="stylesheet" href="/stylesheets/shows/new.css"> -->
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (song.owner.equals(user?.profile._id)) { %>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/songs" method="POST">
+      <label for="title-input">Title: </label>
+      <input 
+        required 
+        type="text" 
+        name="title" 
+        id="title-input"
+        value="<%= song.title %>"
+      >
+      <label for="artist-input">Artist: </label>
+      <input type="text" name="artist" id="artist-input">
+      <label for="genre-select">Genre: </label>
+      <select name="genre" id="genre-select">
+        <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
+        <option value="R&B">R&B</option>
+        <option value="Rock">Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Country">Country</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Heavy Metal">Heavy Metal</option>
+        <option value="Classical">Classical</option>
+        <option value="Indie">Indie</option>
+        <option value="Reggaeton">Reggaeton</option>
+        <option value="Electronic">Electronic</option>
+    </select>
+    <label for="explicit-rating-checkbox">Explicit Rating: </label>
+    <input type="checkbox" name="explicitRating" id="explicit-rating-checkbox" checked>
+    <button type="submit">Add Song</button>
+  </form>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %> 

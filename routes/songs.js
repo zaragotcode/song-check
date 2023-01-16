@@ -13,6 +13,9 @@ router.get('/new', isLoggedIn, songsCtrl.new)
 // GET localhost:3000/songs/:id
 router.get('/:id', songsCtrl.show)
 
+// GET localhost:3000/songs/:id/edit
+router.get('/:id/edit', isLoggedIn, songsCtrl.edit)
+
 // POST localhost:3000/songs
 router.post("/", songsCtrl.create)
 
