@@ -4,18 +4,27 @@
 
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="/movies" method="POST">
-    <label for="title-input">Title:</label>
+  <form id="new-form" action="/songs" method="POST">
+    <label for="title-input">Title: </label>
     <input required type="text" name="title" id="title-input">
-    <label for="release-year-input">Rrtist: </label>
-    <input type="text" name="releaseYear" id="release-year-input">
-    <label for="mpaa-rating-select">MPAA Rating:</label>
-    <select name="mpaaRating" id="mpaa-rating-select">
-      <option value="G">G</option>
-      <option value="PG">PG</option>
-      <option value="PG-13">PG-13</option>
-      <option value="R">R</option>
+    <label for="artist-input">Artist: </label>
+    <input type="text" name="artist" id="artist-input">
+    <label for="genre-select">Genre: </label>
+    <select name="genre" id="genre-select">
+      <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
+      <option value="R&B">R&B</option>
+      <option value="Rock">Rock</option>
+      <option value="Pop">Pop</option>
+      <option value="Country">Country</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Heavy Metal">Heavy Metal</option>
+      <option value="Classical">Classical</option>
+      <option value="Indie">Indie</option>
+      <option value="Reggaeton">Reggaeton</option>
+      <option value="Electronic">Electronic</option>
     </select>
+    <label for="explicit-rating-checkbox">Explicit Rating: </label>
+    <input type="checkbox" name="explicitRating" id="explicit-rating-checkbox" checked>
     <button type="submit">Add Movie</button>
   </form>
 </main>

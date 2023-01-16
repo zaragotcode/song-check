@@ -23,6 +23,10 @@ const songSchema = new Schema({
     required: true,
     enum: ['Hip-Hop/Rap', 'R&B', 'Rock', 'Pop', 'Country', 'Jazz', 'Heavy Metal', 'Classical', 'Indie', 'Reggaeton', 'Electronic']
   },
+  explicitRating: {
+    type: Boolean, 
+    default: false
+  },
   reviews: [reviewSchema]
 }, {
   timestamps: true
