@@ -50,7 +50,6 @@
           <th>Date</th>
           <th>Review</th>
           <th>Rating</th>
-          <th>Reviewer</th>
         </tr>
       </thead>
       <tbody>
@@ -59,7 +58,6 @@
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.content %></td>
             <td><%= review.rating %></td>
-            <td><%= song.owner.name %></td>
           </tr>
         <% }) %>
       </tbody>

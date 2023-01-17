@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<!-- <link rel='stylesheet' href='/stylesheets/songs/index.css'> -->
+<%- include('../partials/nav') %> 
+
+<main>
+  <h1><%= title %></h1>
+    <ul>
+      <% profiles.forEach(profile => { %>
+        <li> 
+          <%= profile.name %> 
+          -
+          <a href="/profiles/<%= profile._id %>">
+            <button>Details</button>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+<%- include('../partials/footer') %>

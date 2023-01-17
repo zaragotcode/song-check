@@ -1,4 +1,6 @@
 import { Song } from "../models/song.js"
+import { Profile } from "../models/profile.js"
+
 
 function index(req, res) {
   Song.find({})
@@ -81,7 +83,6 @@ function update(req, res) {
     song.updateOne(req.body)
     .then(() => {
       res.redirect(`/songs/${song._id}`)
-      console.log('update controller firing')
     })
   })
   .catch(err => {
@@ -109,6 +110,21 @@ function createReview(req, res) {
   })
 }
 
+function indexUsers(req, res) {
+  Profile.find({})
+  .then(profiles => {
+    res.render('users/index', {
+      profiles,
+      title: 'All Users',
+  })
+})
+.catch(error => {
+  // handle errors
+  console.log(error)
+  res.redirect('/songs')
+})
+}
+
 export {
   index,
   newSong as new,
@@ -116,5 +132,6 @@ export {
   create,
   edit,
   update,
-  createReview
+  createReview,
+  indexUsers
 }

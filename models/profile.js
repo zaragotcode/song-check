@@ -7,6 +7,10 @@ const profileSchema = new Schema({
   avatar: String,
   location: String,
   favoriteArtist: String,
+  gaAlumni: {
+    type: Boolean, 
+    default: true
+  },
   playlist: [{type: Schema.Types.ObjectId, ref: 'Song'}]
 }, {
   timestamps: true
