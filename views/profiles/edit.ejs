@@ -1,0 +1,42 @@
+<%- include('../partials/html-head') %>
+<!-- <link rel="stylesheet" href="/stylesheets/shows/new.css"> -->
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (!user) { %>
+    <h1><%= title %></h1>
+  <% } %>
+  <img
+  src="<%= profile.avatar %>"
+  alt="<%= profile.name %> avatar"
+  />
+  <h3> <%= profile.name %>  has been a user since: <%= profile.createdAt.toLocaleDateString()  %></h3>
+  <form 
+      id="new-form"
+      action="/profiles/<%= profile._id %>?_method=PUT" 
+      method="POST">
+      <label for="location-input">Location: </label>
+      <input 
+        required 
+        type="text" 
+        name="location" 
+        id="location-input"
+        value="<%= profile.location %>"
+      >
+      <label for="favorite-artist-input">Favorite Artist: </label>
+      <input 
+        type="text" 
+        name="favoritArtist" 
+        id="favorite-artist-input"
+        value="<%= profile.favoriteArtist %>"
+        >
+      <label for="ga-alumni-checkbox">General Assembly Alumni: </label>
+      <input 
+        type="checkbox" 
+        name="gaAlumni" 
+        id="ga-alumni-checkbox" 
+        <%= profile.gaAlumni ? "checked" : "" %>
+      >
+      <button type="submit">Finish Edit</button>
+</main>
+<%- include('../partials/footer') %>

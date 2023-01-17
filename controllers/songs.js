@@ -37,11 +37,6 @@ function show(req, res) {
     console.log(error)
     res.redirect('/')
   })
-  .catch(error => {
-    // handle errors
-    console.log(error)
-    res.redirect('/')
-  })
 }
 
 function create(req,res){
