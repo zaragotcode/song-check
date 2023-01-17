@@ -11,10 +11,6 @@ const profileSchema = new Schema({
     type: Boolean, 
     default: true
   },
-  owner: {
-    type: Schema.Types.ObjectId, 
-    ref: "Profile"
-  },
   playlist: [{type: Schema.Types.ObjectId, ref: 'Song'}]
 }, {
   timestamps: true

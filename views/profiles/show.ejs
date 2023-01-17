@@ -18,13 +18,10 @@
   <div>Location: <%= profile.location %> </div>
   <div>Favorite Artist: <%= profile.favoriteArtist %> </div>
   <div>General Assembly Alumni: <%= profile.gaAlumni ? 'Yes' : 'No' %></div>
-  
-  
-  <% if (profile.owner.equals(user?.profile._id)) { %>
+  <% if (profile._id.equals(user?.profile._id)) { %>
     <a href='/profiles/<%= profile._id %>/edit'>
-        <button>Edit User</button>
+      <button>Edit User</button>
     </a>
   <% } %>
-
 </main>
 <%- include('../partials/footer') %>

@@ -17,10 +17,10 @@ function index(req, res) {
 }
 
 function show(req, res) {
+  req.body.gaAlumni = !!req.body.gaAlumni
   Profile.findById(req.params.id)
-  .populate('owner')
   .then(profile => {
-    res.render('profiles/profile', {
+    res.render('profiles/show', {
       profile,
       title: 'Profile Details'
     })
