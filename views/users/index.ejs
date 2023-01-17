@@ -4,6 +4,14 @@
 
 <main>
   <h1><%= title %></h1>
+  <form id="form" role="search">
+    <input type="search" id="query" name="q"
+      placeholder="Search..."
+      aria-label="Search through site content"
+      autocomplete="off"
+      >
+    <button>Search</button>
+  </form>
     <ul>
       <% profiles.forEach(profile => { %>
         <li> 
