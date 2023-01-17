@@ -16,6 +16,9 @@ router.get('/:id', songsCtrl.show)
 // GET localhost:3000/songs/:id/edit
 router.get('/:id/edit', isLoggedIn, songsCtrl.edit)
 
+// DELETE localhost:3000/songs/:id
+router.delete('/:id', songsCtrl.delete)
+
 // POST localhost:3000/songs
 router.post("/", songsCtrl.create)
 

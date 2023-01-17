@@ -105,19 +105,17 @@ function createReview(req, res) {
   })
 }
 
-function indexUsers(req, res) {
-  Profile.find({})
-  .then(profiles => {
-    res.render('users/index', {
-      profiles,
-      title: 'All Users',
+
+function deleteReview(req, res){
+  Song.reviews.findByIdAndDelete(req.params.id)
+  .then(review => {
+    res.redirect('/songs/:id')
   })
-})
-.catch(error => {
-  // handle errors
-  console.log(error)
-  res.redirect('/songs')
-})
+  .catch(error => {
+    // handle errors
+    console.log(error)
+    res.redirect('/songs')
+  })
 }
 
 export {
@@ -128,5 +126,5 @@ export {
   edit,
   update,
   createReview,
-  indexUsers
+  deleteReview as delete
 }
