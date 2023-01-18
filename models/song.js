@@ -34,7 +34,7 @@ const songSchema = new Schema({
   genre: {
     type: String,
     required: true,
-    enum: ['Hip-Hop', 'Rhythm-and-Blues', 'Rock', 'Pop', 'Country', 'Jazz', 'Heavy Metal', 'Classical', 'Indie', 'Reggaeton', 'Electronic', 'Latin']
+    enum: ['Hip-Hop', 'Rhythm-and-Blues', 'Rock', 'Pop', 'Country', 'Jazz', 'Heavy-Metal', 'Classical', 'Indie', 'Reggaeton', 'Electronic', 'Latin']
   },
   explicitRating: {
     type: Boolean, 
