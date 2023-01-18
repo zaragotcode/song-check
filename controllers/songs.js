@@ -107,14 +107,29 @@ function createReview(req, res) {
 
 
 function deleteReview(req, res){
-  Song.reviews.findByIdAndDelete(req.params.id)
-  .then(review => {
-    res.redirect('/songs/:id')
-  })
+  Song.findById(req.params.songId)
+  .then(song => {
+    const currentReview = song.reviews.id(req.params.reviewId)
+    console.log(currentReview)
+    if (currentReview.author.equals(req.user.profile._id)){
+      song.reviews.remove(currentReview)
+      song.save()
+    .then(() => {
+      res.redirect(`/songs/${song._id}`)
+    })
+    .catch(error => {
+      // handle errors
+      console.log(error)
+      res.redirect('/songs/:id')
+    })
+  } else {
+    throw new Error('🚫 Not authorized 🚫')
+  }
+})
   .catch(error => {
     // handle errors
     console.log(error)
-    res.redirect('/songs')
+    res.redirect('/songs/:id')
   })
 }
 
