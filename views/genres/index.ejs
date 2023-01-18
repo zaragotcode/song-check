@@ -74,14 +74,4 @@
         </a>
       </li>
   </ul>
-  <ul>
-    <% songs.forEach(song => { %>
-      <li>
-        🎵 
-        <%= song.title %> 
-        - <%= song.artist %>
-        <a href="/songs/<%= song._id %>"><button>Details</button></a>
-      </li>
-    <% }) %>
-  </ul>
 <%- include('../partials/footer') %>
