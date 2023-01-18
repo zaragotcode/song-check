@@ -4,10 +4,6 @@
 
 <main>
   <h1><%= title %></h1>
-  <% if (user) { %>
-    <h2>Add a song!</h2>
-    <a href='/songs/new'>Add Song </a>
-  <% } %>
     <ul>
       <% songs.forEach(song => { %>
         <li>

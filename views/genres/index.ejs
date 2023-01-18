@@ -8,70 +8,80 @@
   <ul>
       <li>
         <h3>Hip-Hop/Rap</h3>
-        <a href="/genres/?hip-hop-rap">
+        <a href="/genres/?genre=hip-hop-rap">
         <button>View Songs</button>
         </a>
         </a>
       </li>
       <li>
         <h3>R&B</h3>
-        <a href="/genres/?r-and-b">
+        <a href="/genres/?genre=r-and-b">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Rock</h3>
-        <a href="/genres/?rock">
+        <a href="/genres/?genre=rock">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Pop</h3>
-        <a href="/genres/?pop">
+        <a href="/genres/?genre=pop">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Country</h3>
-        <a href="/genres/?country">
+        <a href="/genres/?genre=country">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Jazz</h3>
-        <a href="/genres/?jazz">
+        <a href="/genres/?genre=jazz">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Heavy Metal</h3>
-        <a href="/genres/?heavy-metal">
+        <a href="/genres/?genre=heavy-metal">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Classical</h3>
-        <a href="/genres/?classical">
+        <a href="/genres/?genre=classical">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Indie</h3>
-        <a href="/genres/?indie">
+        <a href="/genres?genre=Indie">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Reggaeton</h3>
-        <a href="/genres/?reggaeton">
+        <a href="/genres/?genre=reggaeton">
         <button>View Songs</button>
         </a>
       </li>
       <li>
         <h3>Electronic</h3>
-        <a href="/genres/?electronic">
+        <a href="/genres/?genre=electronic">
         <button>View Songs</button>
         </a>
       </li>
+  </ul>
+  <ul>
+    <% songs.forEach(song => { %>
+      <li>
+        🎵 
+        <%= song.title %> 
+        - <%= song.artist %>
+        <a href="/songs/<%= song._id %>"><button>Details</button></a>
+      </li>
+    <% }) %>
   </ul>
 <%- include('../partials/footer') %>

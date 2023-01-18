@@ -3,25 +3,27 @@ import { Profile } from "../models/profile.js"
 
 
 function index(req, res) {
-  Song.find({})
+  console.log('Query obj:', req.query)
+  Song.find(req.query)
   .then(songs => {
+    console.log('Filtered songs', songs)
+    console.log('QUERY OBJECTTTTTT:', req.query)
     res.render('genres/index', {
       songs,
       title: 'Choose a genre!',
+    })
   })
-})
-.catch(error => {
-  // handle errors
-  console.log(error)
-  res.redirect('/genres')
-})
+  .catch(error => {
+    // handle errors
+    console.log(error)
+    res.redirect('/genres')
+  })
 }
 
 function show(req, res) {
   Song.findById(req.params.id)
-  .populate('owner')
   .then(song => {
-    res.render('songs/show', {
+    res.render('genres/show', {
       song,
       title: 'Song Details'
     })

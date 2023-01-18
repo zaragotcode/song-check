@@ -4,7 +4,6 @@ import { Profile } from "../models/profile.js"
 
 function index(req, res) {
   Song.find({})
-  req.query()
   .then(songs => {
     res.render('songs/index', {
       songs,
