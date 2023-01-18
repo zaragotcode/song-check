@@ -7,6 +7,8 @@ const router = Router()
 // GET localhost:3000/users
 router.get('/', genresCtrl.index)
 
+// GET localhost:3000/songs/:id
+router.get('/:id', genresCtrl.show)
 
 export {
   router
