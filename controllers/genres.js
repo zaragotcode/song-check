@@ -20,9 +20,10 @@ function index(req, res) {
 function show(req, res) {
   Song.find(req.query)
   .then(songs => {
+    console.log(songs);
     res.render('genres/show', {
       songs,
-      title: 'Choose a genre!',
+      title: songs[0].genre ,
     })
   })
   .catch(error => {

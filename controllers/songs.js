@@ -89,6 +89,7 @@ function update(req, res) {
 function createReview(req, res) {
   Song.findById(req.params.id)
   .then(song => {
+    req.body.author = req.user.profile._id
     song.reviews.push(req.body)
     song.save()
     .then(() => {
@@ -107,10 +108,12 @@ function createReview(req, res) {
 
 
 function deleteReview(req, res){
+  console.log('THIS IS MY DELETE REVIEW FUNCTIONNNNNNNNN')
   Song.findById(req.params.songId)
   .then(song => {
     const currentReview = song.reviews.id(req.params.reviewId)
-    console.log(currentReview)
+    console.log('CURRENT REVIEW AUTHOR', currentReview)
+    console.log(req.user.profile._id);
     if (currentReview.author.equals(req.user.profile._id)){
       song.reviews.remove(currentReview)
       song.save()
