@@ -17,9 +17,11 @@
       <a href="/songs">Songs</a>
     </div>
     <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
+      <div>
+        <a href="/auth/logout" class="right">
+          <button id="logout" type="submit">Logout</button>
+        </a>
+      </div>
     <% } else { %>
       <div id="google-sign-in-btn">
         <div 

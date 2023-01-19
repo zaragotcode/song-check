@@ -43,6 +43,11 @@ nav a {
   font-weight: bold;
 }
 
+nav a:hover {
+  color: red;
+  font-size: 32px;
+}
+
 main {
   display: flex;
   align-items: center;
@@ -58,4 +63,17 @@ footer {
   position: absolute;
   font-family: 'Fredoka One', cursive;
   bottom: 0;
+}
+
+#logout {
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+}
+
+#logout:hover {
+  color: red;
+  font-size: 32px;
 }
