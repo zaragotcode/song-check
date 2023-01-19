@@ -1,51 +1,21 @@
-html {
-  box-sizing: border-box;
+h1 {
+  margin-top: 60px;
+  font-family: 'Fredoka One', cursive;
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after {
-  /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default but can be overridden as needed */
-  box-sizing: inherit;
-}
-
-body {
-  background: rgb(2,0,36);
-  background: linear-gradient(171deg, rgba(2,0,36,1) 15%, rgba(144,20,159,1) 56%, rgba(0,212,255,1) 100%);
-  color: white;
-  /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
-  margin: 0;
-  min-height: 100vh;
-}
-
-nav {
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  min-height: 60px;
-  font-size: 18px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-main {
-  display: flex;
-  align-items: center;
+section {
+  margin-top:42px;
+  font-family: 'Rowdies', cursive; 
+  display: flexbox;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 36px;
 }
 
-.right {
-  margin-left: auto;
+section div {
+  margin-top: 32px;
+  color: violet;
+  font-weight: bold;
+  text-decoration: dotted;
 }
