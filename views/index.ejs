@@ -2,15 +2,12 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  <h1>Welcome to Song Check</h1>
+  <section>
+    Song Check is a CRUD (create, read, update, and delete) application that serves as a platform to connect all music lovers. When interacting with our app as a guest, you can view a list of all the songs created by our users and view more information about the song along with its reviews. If you notice you enjoy a user's music taste you can find all of their specifically added songs by searching for the user and viewing their playlist.
+
+Click in the sign-in button in the navigation bar to become one of our users and gain access to adding songs and leaving reviews along with your own profile which you can customize!
+  </section>
 </main>
 
 <%- include('./partials/footer') %>

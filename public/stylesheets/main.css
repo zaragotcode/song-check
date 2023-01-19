@@ -15,6 +15,7 @@ body {
   background: rgb(2,0,36);
   background: linear-gradient(171deg, rgba(2,0,36,1) 15%, rgba(144,20,159,1) 56%, rgba(0,212,255,1) 100%);
   color: white;
+  /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
