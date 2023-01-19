@@ -2,8 +2,10 @@ import { Profile } from "../models/profile.js"
 import { Song } from "../models/song.js"
 
 function index(req, res) {
-  Profile.find({})
+  console.log("THIS IS MY REQ.QUERY", req.query);
+  Profile.find(req.query)
   .then(profiles => {
+    if (profiles.name = req.query)
     res.render('profiles/index', {
       profiles,
       title: 'All Users',
