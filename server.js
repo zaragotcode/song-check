@@ -24,6 +24,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as songsRouter } from './routes/songs.js'
 import { router as profilesRouter } from './routes/profiles.js'
 import { router as genresRouter } from './routes/genres.js'
+import { router as aboutRouter } from './routes/about.js'
 
 // create the express app
 const app = express()
@@ -71,6 +72,7 @@ app.use('/auth', authRouter)
 app.use('/songs', songsRouter)
 app.use('/profiles', profilesRouter)
 app.use('/genres', genresRouter)
+app.use('/about', aboutRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
