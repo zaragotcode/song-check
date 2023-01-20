@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel="stylesheet" href="/stylesheets/shows/new.css"> -->
+<link rel="stylesheet" href="/stylesheets/songs/edit.css">
 <%- include('../partials/nav') %>
 
 <main>
@@ -9,52 +9,62 @@
       id="new-form"
       action="/songs/<%= song._id %>?_method=PUT" 
       method="POST">
-      <label for="title-input">Title: 
-        <b>Title: </b>
-      </label>
-      <input 
-        required 
-        type="text" 
-        name="title" 
-        id="title-input"
-        value="<%= song.title %>"
-      >
-      <label for="artist-input"> 
-        <b>Artist: </b>
-      </label>
-      <input 
-        type="text" 
-        name="artist" 
-        id="artist-input"
-        value="<%= song.artist %>"
+      <div class="song-properties-div">
+        <label for="title-input">
+          <b>Title: </b>
+        </label>
+        <input 
+          required 
+          type="text" 
+          name="title" 
+          id="title-input"
+          value="<%= song.title %>"
         >
-      <label for="genre-select">
-        <b>Genre: </b>
-      </label>
-      <select name="genre" id="genre-select" value="<%= song.genre %>">
-        <option value="Hip-Hop">Hip-Hop/Rap</option>
-        <option value="Rhythm-and-Blues">Rhythm & Blues</option>
-        <option value="Rock">Rock</option>
-        <option value="Pop">Pop</option>
-        <option value="Country">Country</option>
-        <option value="Jazz">Jazz</option>
-        <option value="Heavy-Metal">Heavy Metal</option>
-        <option value="Classical">Classical</option>
-        <option value="Indie">Indie</option>
-        <option value="Reggaeton">Reggaeton</option>
-        <option value="Electronic">Electronic</option>
-        <option value="Latin">Latin</option>
-      </select>
-      <label for="explicit-rating-checkbox"> 
-        <b>Explicit Rating:  </b>
-      </label>
-      <input 
-        type="checkbox" 
-        name="explicitRating" 
-        id="explicit-rating-checkbox" 
-        <%= song.explicitRating ? "checked" : "" %>
-      >
-      <button type="submit">Finish Edit</button>
+      </div>
+      <div class="song-properties-div">
+        <label for="artist-input"> 
+          <b>Artist: </b>
+        </label>
+        <input 
+          type="text" 
+          name="artist" 
+          id="artist-input"
+          value="<%= song.artist %>"
+          >
+      </div>
+      <div class="song-properties-div">
+        <label for="genre-select">
+          <b>Genre: </b>
+        </label>
+        <select id="genre-dropdown" name="genre" id="genre-select" value="<%= song.genre %>">
+          <option value="Hip-Hop">Hip-Hop/Rap</option>
+          <option value="Rhythm-and-Blues">Rhythm & Blues</option>
+          <option value="Rock">Rock</option>
+          <option value="Pop">Pop</option>
+          <option value="Country">Country</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Heavy-Metal">Heavy Metal</option>
+          <option value="Classical">Classical</option>
+          <option value="Indie">Indie</option>
+          <option value="Reggaeton">Reggaeton</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Latin">Latin</option>
+        </select>
+      </div>
+      <div class="song-properties-div">
+        <label for="explicit-rating-checkbox"> 
+          <b>Explicit Rating:  </b>
+        </label>
+        <input id="rating-checkbox"
+          type="checkbox" 
+          name="explicitRating" 
+          id="explicit-rating-checkbox" 
+          <%= song.explicitRating ? "checked" : "" %>
+        >
+      </div>
+      <div>
+        <button id="finish-edit-btn" type="submit">Finish Edit</button>
+      </div>
     </form>
   <% } %>
 </main>

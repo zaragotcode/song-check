@@ -1,5 +1,12 @@
 <%- include('../partials/html-head') %>
 <link rel='stylesheet' href='/stylesheets/songs/show.css'>
+<link 
+		id="favicon" 
+    rel="icon"
+    href="./assets/Music-Favicon.png"
+    type="image/png" 
+    sizes="32x32"
+    >
 <%- include('../partials/nav') %>
 
 <main>
@@ -39,7 +46,7 @@
     <div class="form-content">
       <label for='content-textarea'>Review:</label>
     </div>
-    <div>
+    <div id="textarea-div">
       <textarea name='content' id='content-textarea'></textarea>
     </div>
     <div class="form-content">
@@ -53,38 +60,42 @@
       </select>
     </div>
     <div class="form-content">
-      <button type='submit'>Add Review</button>
+      <button id="add-review-btn" type='submit'>Add Review</button>
     </div>
   </form>
   </div>
   <% } %>
   <% if (song.reviews.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Review</th>
-          <th>Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% song.reviews.forEach(function(review) { %>
+    <div id="reviews-form-div">
+      <table>
+        <thead>
           <tr>
-            <td><%= review.createdAt.toLocaleDateString() %></td>
-            <td><%= review.content %></td>
-            <td><%= review.rating %></td>
-            <td>
-              <form 
-              action='/songs/<%= song._id %>/reviews/<%= review._id %>?_method=DELETE' 
-              method='POST'
-            >
-              <button>Delete Review</button>
-            </form>
-            </td>
+            <th>Date</th>
+            <th>Review</th>
+            <th>Rating</th>
           </tr>
-        <% }) %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% song.reviews.forEach(function(review) { %>
+            <tr>
+              <td><%= review.createdAt.toLocaleDateString() %></td>
+              <td><%= review.content %></td>
+              <td><%= review.rating %></td>
+              <td>
+                <div id="delete-review-div">
+                <form 
+                action='/songs/<%= song._id %>/reviews/<%= review._id %>?_method=DELETE' 
+                method='POST'
+              >
+                <button id="delete-review-btn">Delete Review</button>
+              </form>
+            </div>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
   <% } else { %>
     <h3>No Reviews Yet</h3>
   <% } %>

@@ -31,7 +31,11 @@ margin-top: 6px;
   height: 328px;
   overflow-x: hidden;
   overflow-y: auto;
-  list-style: none;
+  list-style-type: none;
+}
+
+#song-list ul {
+  list-style-type: none;
 }
 
 #add-song-btn {

@@ -1,0 +1,50 @@
+body {
+  font-family: 'Rowdies', cursive; 
+}
+
+h1 {
+  margin-top: 28px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+main div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div input {
+  margin-left: 8px;
+  text-align: left;
+}
+
+.song-properties-div {
+  font-family: 'Almarai', sans-serif;
+  margin-top: 24px;
+}
+
+#finish-edit-btn {
+  color: white;
+  background: red;
+  margin-top: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  height: 36px;
+  font-family: 'Amatic SC', cursive;
+}
+
+#finish-edit-btn:hover {
+  cursor: pointer;
+  background: blueviolet;
+  color: yellow;
+}
+
+#genre-dropdox {
+
+}
+
+#rating-checkbox {
+
+}

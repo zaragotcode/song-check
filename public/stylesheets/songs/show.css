@@ -4,6 +4,22 @@ body {
 
 h1 {
   margin-top: 28px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+table {
+  width: 500px;
+  margin-top: 24px;
+}
+
+td {
+  text-align: center;
+}
+
+section {
+  font-size: 18px;
 }
 
 #song-owner-name {
@@ -14,11 +30,11 @@ h1 {
 .scroll {
   overflow-x: hidden;
   overflow-y: auto;
-  border: 2px solid gold;
+  width: 500px;
 }
+
 .song-properties {
   font-family: 'Almarai', sans-serif;
-  border: 2px solid blue;
   height: 40px;
   padding-top: 16px;
 }
@@ -37,6 +53,21 @@ h1 {
   justify-content: center;
 }
 
+#add-review-btn {
+  color: yellow;
+  background: blueviolet;
+  margin-top: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  height: 36px;
+  font-family: 'Amatic SC', cursive;
+}
+
+#add-review-btn:hover{
+  color: white;
+  background: red;
+}
+
 #edit-song-btn {
   color: white;
   background: red;
@@ -53,6 +84,22 @@ h1 {
   color: yellow;
 }
 
+#delete-review-btn {
+  color: black;
+  background: red;
+  border-radius: 6px;
+  font-size: 12px;
+  height: 24px;
+  margin-bottom: 8px;
+  font-family: 'Amatic SC', cursive;
+}
+
+#delete-review-btn:hover {
+  color: greenyellow;
+  background: black;
+}
+
+
 #reviews-form {
   margin-top: 28px;
   display: flex;
@@ -66,6 +113,19 @@ h1 {
   align-items: center;
 }
 
-#reviews-form div {
-  border: 2px solid green;
+#textarea-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-textarea {
+  resize: none;
+}
+
+
+#reviews-form-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
