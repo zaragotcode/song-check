@@ -10,7 +10,9 @@ Click the link below to get started!
 ## [Try out Song Check!](https://song-check.fly.dev)
 
 # Getting Started 🏁
-I created this application due to my hobby of recommending songs to family and friends. I thought it would be a great idea to allow users to come together and have a platform where they could both recommend their favorite songs to others and find song recommendations by their preferred genre and leaving reviews on how they felt about the song. By clicking [here](https://trello.com/b/SlO7V8WY/song-check-project-board) you can access my planning materials.
+I created this application due to my hobby of recommending songs to family and friends. I thought it would be a great idea to allow users to come together and have a platform where they could both recommend their favorite songs to others and find song recommendations by their preferred genre and leaving reviews on how they felt about the song. 
+
+By clicking [here](https://trello.com/b/SlO7V8WY/song-check-project-board) you can access my planning materials.
 
 # Technologies used 💾
 * ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
