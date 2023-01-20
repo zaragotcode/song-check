@@ -129,3 +129,9 @@ section {
   justify-content: center;
   align-items: center;
 }
+
+#song-owner-name{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

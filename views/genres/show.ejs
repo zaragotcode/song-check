@@ -5,13 +5,15 @@
 <main>
   <h1><%= title %></h1>
     <ul>
-      <% songs.forEach(song => { %>
-        <li>
-          🎵 
-          <%= song.title %> 
-          - <%= song.artist %>
-          <a href="/songs/<%= song._id %>"><button>Details</button></a>
-        </li>
-      <% }) %>
-    </ul>
+      <div id="genre-specific-list">
+        <% songs.forEach(song => { %>
+          <li class="songs-in-list">
+            🎵 
+            <%= song.title %> 
+            - <%= song.artist %>
+            <a href="/songs/<%= song._id %>"><button class="details-btn">Details</button></a>
+          </li>
+        <% }) %>
+      </ul>
+      </div>
 <%- include('../partials/footer') %>

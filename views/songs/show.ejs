@@ -87,7 +87,9 @@
                 action='/songs/<%= song._id %>/reviews/<%= review._id %>?_method=DELETE' 
                 method='POST'
               >
+              <% if (song.reviews.author = user?.profile._id) {%>
                 <button id="delete-review-btn">Delete Review</button>
+                <% } %>
               </form>
             </div>
               </td>
