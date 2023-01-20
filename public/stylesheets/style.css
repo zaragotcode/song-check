@@ -25,6 +25,11 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  margin-top: 60px;
+  font-family: 'Fredoka One', cursive;
+}
+
 nav {
   background-color: black;
   color: white;

@@ -1,21 +1,24 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel='stylesheet' href='/stylesheets/songs/index.css'> -->
+<link rel='stylesheet' href='/stylesheets/songs/index.css'>
 <%- include('../partials/nav') %> 
 
 <main>
   <h1><%= title %></h1>
   <% if (user) { %>
-    <h2>Add a song!</h2>
-    <a href='/songs/new'>Add Song </a>
+    <a href='/songs/new'>
+      <button id="add-song-btn">Add Song</button>
+    </a>
   <% } %>
+  <div id="song-list">
     <ul>
       <% songs.forEach(song => { %>
-        <li>
+        <li class="songs-in-list">
           🎵 
           <%= song.title %> 
           - <%= song.artist %>
-          <a href="/songs/<%= song._id %>"><button>Details</button></a>
+          <a href="/songs/<%= song._id %>"><button class="details-btn">Details</button></a>
         </li>
       <% }) %>
     </ul>
+  </div>
 <%- include('../partials/footer') %>
