@@ -1,27 +1,40 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel='stylesheet' href='/stylesheets/songs/index.css'> -->
+<link rel='stylesheet' href='/stylesheets/profiles/show.css'>
 <%- include('../partials/nav') %> 
 
 <main>
-  <% if (!user) { %>
     <h1><%= title %></h1>
-  <% } %>
   <img
   src="<%= profile.avatar %>"
   alt="<%= profile.name %> avatar"
   />
   <% if (!user) { %>
-  <h3> <%= profile.name %>  has been a user since: <%= profile.createdAt.toLocaleDateString()  %></h3>
+  <h3 class="animate__animated animate__pulse animate__slow	2s"> <%= profile.name %>  has been a user since: <%= profile.createdAt.toLocaleDateString()  %></h3>
   <% } else { %> 
     <h3> Hello <%= profile.name %> !</h3>
   <% } %>
-  <div>Location: <%= profile.location %> </div>
-  <div>Favorite Artist: <%= profile.favoriteArtist %> </div>
-  <div>General Assembly Alumni: <%= profile.gaAlumni ? 'Yes' : 'No' %></div>
+  <div id="location-div">
+    <b>Location: </b>
+    <%= profile.location %>
+  </div>
+  <div id="favoriteartist-div">
+    <b>
+      Favorite Artist: 
+    </b>
+    <%= profile.favoriteArtist %>
+  </div>
+  <div id="alumni-div">
+    <b>
+      General Assembly Alumni: 
+    </b>
+    <%= profile.gaAlumni ? 'Yes' : 'No' %>
+  </div>
   <% if (profile._id.equals(user?.profile._id)) { %>
-    <a href='/profiles/<%= profile._id %>/edit'>
-      <button>Edit User</button>
-    </a>
+    <div>
+      <a href='/profiles/<%= profile._id %>/edit'>
+        <button id="edit-user-btn">Edit User</button>
+      </a>
+    </div>
   <% } %>
 </main>
 <%- include('../partials/footer') %>

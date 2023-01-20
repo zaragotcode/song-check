@@ -3,9 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <% if (!user) { %>
     <h1><%= title %></h1>
-  <% } %>
   <img
   src="<%= profile.avatar %>"
   alt="<%= profile.name %> avatar"
@@ -15,28 +13,49 @@
       id="new-form"
       action="/profiles/<%= profile._id %>?_method=PUT" 
       method="POST">
-      <label for="location-input">Location: </label>
-      <input 
-        required 
-        type="text" 
-        name="location" 
-        id="location-input"
-        value="<%= profile.location %>"
-      >
-      <label for="favorite-artist-input">Favorite Artist: </label>
-      <input 
-        type="text" 
-        name="favoriteArtist" 
-        id="favorite-artist-input"
-        value="<%= profile.favoriteArtist %>"
+      
+      <div class="user-properties-div">
+        <label for="location-input">
+        <b>
+        Location: 
+        </b>
+        </label>
+        <input 
+          required 
+          type="text" 
+          name="location" 
+          id="location-input"
+          value="<%= profile.location %>"
         >
-      <label for="ga-alumni-checkbox">General Assembly Alumni: </label>
-      <input 
-        type="checkbox" 
-        name="gaAlumni" 
-        id="ga-alumni-checkbox" 
-        <%= profile.gaAlumni ? "checked" : "" %>
-      >
-      <button type="submit">Finish Edit</button>
+      </div>
+      <div class="user-properties-div">
+        <label for="favorite-artist-input">
+          <b>
+            Favorite Artist: 
+          </b>
+        </label>
+        <input 
+          type="text" 
+          name="favoriteArtist" 
+          id="favorite-artist-input"
+          value="<%= profile.favoriteArtist %>"
+          >
+      </div>
+      <div class="user-properties-div">
+        <label for="ga-alumni-checkbox">
+          <b>
+            General Assembly Alumni: 
+          </b> 
+        </label>
+        <input 
+          type="checkbox" 
+          name="gaAlumni" 
+          id="ga-alumni-checkbox" 
+          <%= profile.gaAlumni ? "checked" : "" %>
+        >
+      </div>
+      <div id="saveuser-edit-btn">
+        <button type="submit">Finish Edit</button>
+      </div>
 </main>
 <%- include('../partials/footer') %>
