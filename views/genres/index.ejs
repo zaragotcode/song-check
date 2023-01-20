@@ -1,83 +1,84 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel='stylesheet' href='/stylesheets/songs/index.css'> -->
+<link rel='stylesheet' href='/stylesheets/genres/index.css'>
 <%- include('../partials/nav') %> 
 
 <main>
   <h1><%= title %></h1>
-  <h2>Choose a genre to view all the songs</h2>
-  <ul>
-      <li>
-        <h3>Hip-Hop/Rap</h3>
-        <a href="/genres/show/?genre=Hip-Hop">
-        <button>View Songs</button>
-        </a>
-        </a>
-      </li>
-      <li>
-        <h3>R&B</h3>
-        <a href="/genres/show/?genre=Rhythm-and-Blues">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Rock</h3>
-        <a href="/genres/show/?genre=Rock">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Pop</h3>
-        <a href="/genres/show/?genre=Pop">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Country</h3>
-        <a href="/genres/show/?genre=Country">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Jazz</h3>
-        <a href="/genres/show/?genre=Jazz">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Heavy Metal</h3>
-        <a href="/genres/show/?genre=Heavy-Metal">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Classical</h3>
-        <a href="/genres/show/?genre=Classical">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Indie</h3>
-        <a href="/genres/show/?genre=Indie">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Reggaeton</h3>
-        <a href="/genres/show/?genre=Reggaeton">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Electronic</h3>
-        <a href="/genres/show/?genre=Electronic">
-        <button>View Songs</button>
-        </a>
-      </li>
-      <li>
-        <h3>Latin</h3>
-        <a href="/genres/show/?genre=Latin">
-        <button>View Songs</button>
-        </a>
-      </li>
-  </ul>
+  <h2>Scroll and click view songs to view all the songs in the selected</h2>
+  <div id="genre-list">
+    <ul>
+        <li class="genres-in-list">
+          Hip-Hop/Rap
+          <a href="/genres/show/?genre=Hip-Hop">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          R&B
+          <a href="/genres/show/?genre=Rhythm-and-Blues">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Rock
+          <a href="/genres/show/?genre=Rock">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Pop
+          <a href="/genres/show/?genre=Pop">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Country
+          <a href="/genres/show/?genre=Country">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Jazz
+          <a href="/genres/show/?genre=Jazz">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Heavy Metal
+          <a href="/genres/show/?genre=Heavy-Metal">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Classical
+          <a href="/genres/show/?genre=Classical">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Indie
+          <a href="/genres/show/?genre=Indie">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Reggaeton
+          <a href="/genres/show/?genre=Reggaeton">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Electronic
+          <a href="/genres/show/?genre=Electronic">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+        <li class="genres-in-list">
+          Latin
+          <a href="/genres/show/?genre=Latin">
+          <button class="view-genre-btn">View Songs</button>
+          </a>
+        </li>
+    </ul>
+  </div>
 <%- include('../partials/footer') %>
