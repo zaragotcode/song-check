@@ -1,25 +1,27 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel='stylesheet' href='/stylesheets/songs/index.css'> -->
+<link rel='stylesheet' href='/stylesheets/profiles/index.css'>
 <%- include('../partials/nav') %> 
 
 <main>
   <h1><%= title %></h1>
   <form id="form" role="search">
-    <input type="search" id="query" name="name"
-      placeholder="Search..."
+    <input id="search-bar" type="search" id="query" name="name"
+      placeholder="Search users..."
       aria-label="Search through users"
       autocomplete="off"
     >
-    <button>Search</button>
+    <button id="search-btn">Search</button>
   </form>
+  <div id="profiles-div">
     <ul>
       <% profiles.forEach(profile => { %>
-        <li> 
+        <li class="profiles-in-list"> 
           <%= profile.name %>
           <a href="/profiles/<%= profile._id %>">
-            <button>Details</button>
+            <button class="view-profile-btn">Details</button>
           </a>
         </li>
       <% }) %>
     </ul>
+  </div>
 <%- include('../partials/footer') %>
