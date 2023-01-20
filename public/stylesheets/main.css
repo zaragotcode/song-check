@@ -15,7 +15,8 @@ section {
 
 section div {
   margin-top: 32px;
-  color: violet;
+  color: #368ddb;
   font-weight: bold;
   text-decoration: dotted;
+  font-size: 24px;
 }

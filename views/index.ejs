@@ -4,24 +4,17 @@
 
 <main>
   <h1 class="animate__animated animate__jackInTheBox animate__slow	2s">Welcome to Song Check</h1>
+  <% if (!user) { %>
   <section>
-    Song Check is a CRUD (create, read, update, and delete) application that serves as a platform to connect all music lovers.
-    <br>
-    When interacting with our app as a guest, you can view a list of all the songs created by our users and view more information 
-    <br>
-    about the song along with its reviews. If you notice you enjoy a user's music taste you can find 
-    <br>
-    all of their specifically added songs by searching for the user and viewing their playlist.
-    <br>
     <div>Click in the sign-in button in the navigation 
-    bar to become one of our users
+    bar to become
     <br>
-    and gain access to adding songs and leaving reviews
+    one of our users and gain access to adding songs and leaving reviews
     <br>
     along with your own profile which you can customize!
     </div>
-    </span>
   </section>
+  <% } %>
 </main>
 
 <%- include('./partials/footer') %>
