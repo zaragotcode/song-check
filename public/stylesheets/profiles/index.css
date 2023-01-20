@@ -50,3 +50,9 @@ form input {
   height: 36px;
   border-radius: 8px;
 }
+
+#search-btn:hover {
+  color: blueviolet;
+  background-color: black;
+  cursor: pointer;
+}

@@ -42,11 +42,6 @@ function show(req, res) {
 function create(req,res){
   req.body.owner = req.user.profile
   req.body.explicitRating = !!req.body.explicitRating
-  // for (const key in req.body) {
-  //   // Key can be "title", "releaseYear", etc.
-  //   if(req.body[key] === "") delete req.body[key]
-  //   //req.body.releaseYear is "" so we delete it
-  // }
   Song.create(req.body)
   .then(song => {
     res.redirect('/songs')
@@ -108,13 +103,10 @@ function createReview(req, res) {
 
 
 function deleteReview(req, res){
-  console.log('THIS IS MY DELETE REVIEW FUNCTIONNNNNNNNN')
   Song.findById(req.params.songId)
   .then(song => {
     const currentReview = song.reviews.id(req.params.reviewId)
-    console.log('CURRENT REVIEW AUTHOR', currentReview)
-    console.log(req.user.profile._id);
-    if (currentReview.author.equals(req.user.profile._id)){
+    if (currentReview.author = (req.user.profile._id)){
       song.reviews.remove(currentReview)
       song.save()
     .then(() => {

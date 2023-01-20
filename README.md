@@ -1,7 +1,7 @@
 # Song Check
-![Song Check home page](https://i.imgur.com/dNlKyxX.png)
+![Song Check home page](https://i.imgur.com/Hn7wKdl.png)
 
-Song Check is a CRUD (create, read, update, and delete) application that serves as a platform to connect all music lovers. When interacting with our app as a guest, you can view a list of all the songs created by our users and view more information about the song along with its reviews. If you notice you enjoy a user's music taste you can find all of their specifically added songs by searching for the user and viewing their playlist.
+Song Check is an application that serves as a platform to connect all music lovers. When interacting with our app as a guest, you can view a list of all the songs created by our users and view more information about the song along with its reviews. If you notice you enjoy a user's music taste you can find all of their specifically added songs by searching for the user and viewing their playlist.
 
 By signing in with Google you become one of our users and gain access to adding songs and leaving reviews along with your own profile which you can customize with information such as where you're from and who your favorite musician is.
 
