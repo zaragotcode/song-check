@@ -13,7 +13,12 @@
   <div class="scroll">
   <h1><%= title %></h1>
   <% if (!song.owner.equals(user?.profile._id)) { %>
-    <h2 class='animate__animated animate__heartBeat' id='song-owner-name'>This song was added by <%= song.owner.name %> </h2>
+    <h2 class='animate__animated animate__heartBeat' id='song-owner-name'>
+      This song was added by...
+      <a id="song-owner-linkanchor" href="../profiles/<%= song.owner._id %> ">
+        <%= " " + song.owner.name + " !"%> 
+      </a>
+    </h2>
   <% } %>
   <section>
     <div class="song-properties"><b>Title: </b><%= song.title %></div>

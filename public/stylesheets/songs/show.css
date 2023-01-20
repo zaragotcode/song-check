@@ -135,3 +135,13 @@ section {
   text-align: center;
   justify-content: center;
 }
+
+#song-owner-linkanchor, #song-owner-linkanchor:visited, a:active {
+  margin-left: 2px;
+  text-decoration: none;
+  color: inherit;
+}
+
+#song-owner-linkanchor:hover {
+  color: gold;
+}
