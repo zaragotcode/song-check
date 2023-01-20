@@ -9,7 +9,9 @@
       id="new-form"
       action="/songs/<%= song._id %>?_method=PUT" 
       method="POST">
-      <label for="title-input">Title: </label>
+      <label for="title-input">Title: 
+        <b>Title: </b>
+      </label>
       <input 
         required 
         type="text" 
@@ -17,14 +19,18 @@
         id="title-input"
         value="<%= song.title %>"
       >
-      <label for="artist-input">Artist: </label>
+      <label for="artist-input"> 
+        <b>Artist: </b>
+      </label>
       <input 
         type="text" 
         name="artist" 
         id="artist-input"
         value="<%= song.artist %>"
         >
-      <label for="genre-select">Genre: </label>
+      <label for="genre-select">
+        <b>Genre: </b>
+      </label>
       <select name="genre" id="genre-select" value="<%= song.genre %>">
         <option value="Hip-Hop">Hip-Hop/Rap</option>
         <option value="Rhythm-and-Blues">Rhythm & Blues</option>
@@ -39,7 +45,9 @@
         <option value="Electronic">Electronic</option>
         <option value="Latin">Latin</option>
       </select>
-      <label for="explicit-rating-checkbox">Explicit Rating: </label>
+      <label for="explicit-rating-checkbox"> 
+        <b>Explicit Rating:  </b>
+      </label>
       <input 
         type="checkbox" 
         name="explicitRating" 

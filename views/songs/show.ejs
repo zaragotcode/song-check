@@ -1,47 +1,62 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel="stylesheet" href="/stylesheets/shows/new.css"> -->
+<link rel='stylesheet' href='/stylesheets/songs/show.css'>
 <%- include('../partials/nav') %>
 
 <main>
+  <div class="scroll">
   <h1><%= title %></h1>
   <% if (!song.owner.equals(user?.profile._id)) { %>
-    <h2>This song was added by <%= song.owner.name %> </h2>
+    <h2 class='animate__animated animate__heartBeat' id='song-owner-name'>This song was added by <%= song.owner.name %> </h2>
   <% } %>
   <section>
-    <div>Title: <%= song.title %></div>
-    <div>Artist: <%= song.artist %> </div>
-    <div>Genre: </div>
-    <div><%= song.genre %></div>
-    <div>Explicit Rating: </div>
-    <div><%= song.explicitRating ? 'Yes' : 'Nope' %></div>
+    <div class="song-properties"><b>Title: </b><%= song.title %></div>
+    <div class="song-properties"><b>Artist: </b><%= song.artist %> </div>
+    <div class="song-properties"><b>Genre: </b>
+    <%= song.genre %>
+    </div>
+    <div class="song-properties"><b>Explicit Rating: </b>
+    <%= song.explicitRating ? 'Yes' : 'Nope' %>
+    </div>
     <% if (song.owner.equals(user?.profile._id)) { %>
-      <a href='/songs/<%= song._id %>/edit'>
-        <button>Edit Song</button>
-      </a>
+      <div class="song-properties-edit">
+        <a href='/songs/<%= song._id %>/edit'>
+          <button id="edit-song-btn">Edit Song</button>
+        </a>
+      </div>
     <% } %>
   </section>
 
 
 
-  <h2>Reviews</h2>
+  <h2 id="reviews">Reviews</h2>
   <% if (user) { %>
+    <div class="reviews-form">
     <form 
-    id="add-review-form"
-    action="/songs/<%= song._id %>/reviews"
-    method="POST"
+    id='add-review-form'
+    action='/songs/<%= song._id %>/reviews'
+    method='POST'
     >
-    <label for="content-textarea">Review:</label>
-    <textarea name="content" id="content-textarea"></textarea>
-    <label for="rating-select">Rating:</label>
-    <select name="rating" id="rating-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5" selected>5</option>
-    </select>
-    <button type="submit">Add Review</button>
+    <div class="form-content">
+      <label for='content-textarea'>Review:</label>
+    </div>
+    <div>
+      <textarea name='content' id='content-textarea'></textarea>
+    </div>
+    <div class="form-content">
+      <label for='rating-select'>Rating:</label>
+      <select name='rating' id='rating-select'>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5' selected>5</option>
+      </select>
+    </div>
+    <div class="form-content">
+      <button type='submit'>Add Review</button>
+    </div>
   </form>
+  </div>
   <% } %>
   <% if (song.reviews.length) { %>
     <table>
@@ -50,7 +65,6 @@
           <th>Date</th>
           <th>Review</th>
           <th>Rating</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -74,6 +88,7 @@
   <% } else { %>
     <h3>No Reviews Yet</h3>
   <% } %>
+</div>
 </main>
 
 <%- include('../partials/footer') %> 

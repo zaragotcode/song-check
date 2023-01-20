@@ -1,0 +1,71 @@
+body {
+  font-family: 'Rowdies', cursive; 
+}
+
+h1 {
+  margin-top: 28px;
+}
+
+#song-owner-name {
+  font-family: 'Fredoka One', cursive;
+  color: blueviolet;
+}
+
+.scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 2px solid gold;
+}
+.song-properties {
+  font-family: 'Almarai', sans-serif;
+  border: 2px solid blue;
+  height: 40px;
+  padding-top: 16px;
+}
+
+
+.form-content {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-properties-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#edit-song-btn {
+  color: white;
+  background: red;
+  margin-top: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  height: 36px;
+  font-family: 'Amatic SC', cursive;
+}
+
+#edit-song-btn:hover {
+  cursor: pointer;
+  background: blueviolet;
+  color: yellow;
+}
+
+#reviews-form {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#reviews-form div {
+  border: 2px solid green;
+}
