@@ -1,5 +1,7 @@
 # Song Check
 ![Song Check home page](https://i.imgur.com/Hn7wKdl.png)
+![Song Check song details page](https://i.imgur.com/ALK8nYs.png)
+![Song Check profile page](https://i.imgur.com/7GG9JuW.png)
 
 Song Check is an application that serves as a platform to connect all music lovers. When interacting with our app as a guest, you can view a list of all the songs created by our users and view more information about the song along with its reviews. If you notice you enjoy a user's music taste you can find all of their specifically added songs by searching for the user and viewing their playlist.
 
