@@ -9,7 +9,7 @@ const profileSchema = new Schema({
   favoriteArtist: String,
   gaAlumni: {
     type: Boolean, 
-    default: true
+    default: false
   },
   playlist: [{type: Schema.Types.ObjectId, ref: 'Song'}]
 }, {
